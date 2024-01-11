@@ -6,24 +6,48 @@
 // 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
 
 // Exercise 1
-const CountCharacters = (text: String) =>
-  console.log(`the number of characters are ${text.length}`);
+const countCharacters = (text: string = "") =>
+  !text
+    ? console.warn("Please enter some text")
+    : console.log(`The number of characters are ${text.length}`);
 
-CountCharacters("Hola me llamo Lean");
+countCharacters();
+countCharacters("Hello my name is Lean");
 
 // Exercise 2
-const TrimText = (text: String, characters: number) =>
-  console.log(text.slice(0, characters));
+const trimText = (text: string = "", lenght: number) =>
+  !text
+    ? console.warn("Please enter some text")
+    : lenght === undefined
+      ? console.warn("Enter the trim lenght")
+      : console.log(text.slice(0, lenght));
 
-TrimText("Pollo al horno", 7);
+trimText("Fresh tomato", 7);
+trimText("", 7);
+// trimText("Fresh tomato");
+// trimText();
 
 // Exercise 3
-const SeparateWords = (text: String) => console.log(text.split(" "));
+const separateWords = (text: string = "", separator: string = "") =>
+  !text
+    ? console.warn("Please enter some text")
+    : separator === undefined
+      ? console.warn("You not type the separator character")
+      : console.log(text.split(separator));
 
-SeparateWords("Hoy es un día con mucho viento");
+separateWords("Today is sunday and sunny", " ");
+separateWords("", " ");
+separateWords("Hello guys", "");
 
 // Exercise 4
-const RepeatText = (text: String, quantity: number) =>
-  console.log(text.repeat(quantity));
+const repeatText = (text: string = "", quantity: number) => {
+  if (!text) return console.warn("Please enter some text");
+  if (quantity === undefined) return console.warn("Please enter the quantity");
+  if (quantity <= 0) return console.error("You must enter a positive value");
+  return console.log(text.repeat(quantity));
+};
 
-RepeatText("Soy Leandro.", 4);
+repeatText("", 4);
+repeatText("Soy Leandro.", -34);
+// repeatText("Soy Leandro.", undefined);
+repeatText("Soy Leandro.", 4);
