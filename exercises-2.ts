@@ -10,24 +10,25 @@ const revertText = (text: string = "") =>
     : console.log(text.split("").reverse().join(""));
 
 revertText("");
-revertText("Hola como estas");
+revertText("Hello how are you?");
 
 // Exercise 6
-const countWords = (text: string, word: string) => {
-  if (!text) return console.warn("You must enter text");
-  if (!word) return console.warn("You must enter the word to count");
-  console.log(text.split(" ").filter(words => words === word).length);
-};
+const countWords = (text: string, word: string) =>
+  !text
+    ? console.warn("Please enter the text")
+    : !word
+      ? console.warn("Please type the word to count")
+      : console.log(text.split(" ").filter(words => words === word).length);
 
 countWords("", "pollo");
-countWords("", "pollo");
+countWords("Lorem ipsum lala", "");
 countWords("pollo arbejas pollo pollo", "pollo");
 
 // Exercise 7
-const isPalindromes = (text: string) =>
+const isPalindromes = (text: string = "") =>
   !text
     ? console.warn("You must enter text")
-    : console.log(text == text.split("").reverse().join(""));
+    : console.log(text == text.toLowerCase().split("").reverse().join(""));
 
 isPalindromes("salas");
 isPalindromes("dog");
@@ -38,7 +39,7 @@ isPalindromes("25464");
 const isPalindromesNum = (numero: number) => {
   const text = numero.toString();
   !text
-    ? console.warn("You must enter text")
+    ? console.warn("You must enter some number")
     : console.log(text == text.split("").reverse().join(""));
 };
 
@@ -46,10 +47,14 @@ isPalindromesNum(234);
 isPalindromesNum(404);
 
 // Exercise 8
-const deletePath = (text: string, path: string) =>
+const deletePath = (text: string = "", path: string = "") =>
   !text
-    ? console.warn("You must enter text")
-    : console.log(text.replaceAll(path, "").trim());
+    ? console.warn("Enter some text")
+    : !path
+      ? console.warn("You must enter the path to delete")
+      : console.log(text.replace(new RegExp(path, "ig"), ""));
 
+deletePath();
+deletePath("xyz1, xyz2, xyz3, xyz4 y xyz5", "");
 deletePath("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
 deletePath("monochromatic, monopolio, monopatin mono", "mono");
