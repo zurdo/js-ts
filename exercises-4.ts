@@ -1,7 +1,8 @@
-// 2) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+// 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
 // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
 
+// Exercise 12
 const esPrimo = (num: number | undefined) => {
   if (num === undefined) return console.error("Please enter a number");
   if (typeof num !== "number")
@@ -32,6 +33,7 @@ esPrimo(83);
 esPrimo(82);
 esPrimo(7);
 
+// Exercise 13
 const isOddOrEven = (num: number | undefined) => {
   if (num === undefined) return console.error("Please enter a number");
   if (typeof num !== "number")
@@ -46,6 +48,7 @@ isOddOrEven(21);
 isOddOrEven(0);
 isOddOrEven(2);
 
+// Exercise 14
 const convertGrades = (
   num: number | undefined,
   unity: string | undefined
