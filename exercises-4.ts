@@ -61,10 +61,10 @@ const convertGrades = (
     return console.error("Unity not valid");
   unity.toLowerCase() === "c"
     ? console.info(
-        `${num}° Celsius are ---> ${Math.round(num * 1.8 + 32)}° Farenheit`
+        `${num}° Celsius are ---> ${Math.round(num * 1.8 + 32)}° Fahrenheit`
       )
     : console.info(
-        `${num}° Farenheit are ---> ${Math.round((num - 32) / 1.8)}° Celsius`
+        `${num}° Fahrenheit are ---> ${Math.round((num - 32) / 1.8)}° Celsius`
       );
 };
 
